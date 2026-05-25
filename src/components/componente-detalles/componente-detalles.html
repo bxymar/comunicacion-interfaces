@@ -1,4 +1,5 @@
 <!-- La etiqueta article para representar el producto -->
+<!-- Primer Producto -->
 <article>
 
     <!-- El signo de ?, ayuda en caso de que la propiedad (nombre) tenga un valor indefinido (valor no definido) (undefined) -->
@@ -9,4 +10,26 @@
     <p>{{productoRecibido()?.codigoBarra}}</p>
     <p>{{productoRecibido()?.estado}}</p>
 
+</article>
+
+<!-- Segundo Producto -->
+<article>
+    @if (productoRecibido(); as producto) {
+        <!-- Nombre -->
+        <h2>Nombre Producto: {{producto.nombre}}</h2>
+
+        <!-- Stock del producto (< 10) color amarillo -->
+        @if (producto.stock < 10){
+            <p class="text-yellow-500">{{producto.stock}}</p>
+        }@else{
+            <p class="text-green-500">{{producto.stock}}</p>
+        }
+
+        <!-- Estado -->
+        @if (producto.estado === true){
+            <span class="bg-green-300 rounded-2xl px-1 shadow-md text-green-800">Producto activo</span>
+        }@else {
+            <span class="bg-red-300 rounded-2xl px-1 shadow-md text-red-800">Producto inactivo</span>
+        }
+    }
 </article>

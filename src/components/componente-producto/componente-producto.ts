@@ -15,11 +15,11 @@ export class ComponenteProducto {
   productoUno: Producto = {
     id: 5,
     nombre: "Coca Cola",
-    stock: 20,
+    stock: 5,
     fecha_vencimiento: "25-05-2027",
     numeroLote: 3,
     codigoBarra: "90156B",
-    estado: true
+    estado: false
   }
 
   productoDos: Producto = {
